@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const agendaService = require('../services/agenda');
+const agendaService = require("../controllers/agendaController");
 
 /* GET agenda listing. */
-router.get('/:id/:group', async function(req, res, next) {
+router.get("/:id/:group", async function (req, res, next) {
   try {
     res.json(await agendaService.mergedAgenda(req.params.id, req.params.group));
   } catch (err) {
@@ -13,7 +13,7 @@ router.get('/:id/:group', async function(req, res, next) {
 });
 
 /* GET eval listing. */
-router.get('/eval', async function(req, res, next) {
+router.get("/eval", async function (req, res, next) {
   try {
     res.json(await agendaService.getEval(req.query.page));
   } catch (err) {
@@ -23,7 +23,7 @@ router.get('/eval', async function(req, res, next) {
 });
 
 /* GET devoir listing. */
-router.get('/devoir', async function(req, res, next) {
+router.get("/devoir", async function (req, res, next) {
   try {
     res.json(await agendaService.getDevoir(req.query.page));
   } catch (err) {

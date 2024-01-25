@@ -1,5 +1,9 @@
-require("dotenv").config();
-
+/**
+ * Récupération des données de scolarité sur MMI Dashboard
+ * @param {*} edu_mail
+ * @param {*} semestre
+ * @returns
+ */
 async function getAbsence(edu_mail, semestre) {
   const credentials = btoa(
     process.env.ABSENCE_USERNAME + ":" + process.env.ABSENCE_PASSWORD
@@ -19,8 +23,6 @@ async function getAbsence(edu_mail, semestre) {
   const data = await response.json();
   return data;
 }
-
-
 
 module.exports = {
   getAbsence,

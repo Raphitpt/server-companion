@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 const agendaRouter = require("./routes/agenda");
-const userRouter = require("./routes/user");
+// const userRouter = require("./routes/user");
 const scolariteRouter = require("./routes/scolarite");
 
 app.use(express.json());
@@ -25,7 +25,5 @@ app.get("/", (req, res) => {
 // Agenda routes
 
 app.use("/agenda/", agendaRouter);
-app.use("/user/", userRouter);
+// app.use("/user/", userRouter);
 app.use("/scolarite/", scolariteRouter);
-
-
